@@ -1,5 +1,5 @@
 string = input("Enter a word ")
-distinct_letters = set()
+distinct_letters = []
 count =0
 while True:
     if not string.isalpha():
@@ -8,7 +8,7 @@ while True:
         for letter in string:
             if letter not in distinct_letters:
                 print(letter)
-                distinct_letters.add(letter)
+                distinct_letters.append(letter)
                 count = count +1
         print("There are", count, "distint letters in", string)
         break

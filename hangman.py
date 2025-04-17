@@ -1,7 +1,6 @@
 import random
 print("Hangman Game")
-words =["banana", "car", "salt", "money", "race", "leave"]
-randomWord = random.choice(words)
+
 manhang= [
     """
     -----
@@ -78,6 +77,8 @@ manhang= [
 
 ]
 def hangman():
+    words =["banana", "car", "salt", "money", "race", "leave"]
+    randomWord = random.choice(words)
     wrong_guesses = 0
     count = len(manhang) - 1
     dash = ['_' for _ in randomWord]
@@ -112,5 +113,9 @@ def hangman():
         if '_' not in dash:
             print("You're right the word is: ", randomWord)
             break
-hangman()
-
+while True:
+    hangman()
+    replay = input("Do you want to play again?? (Y/N) ").lower()
+    if replay!= 'y':
+        print("Thanks for playing!" )
+        break
